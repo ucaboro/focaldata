@@ -1,6 +1,7 @@
 import React from "react";
 import posed from "react-pose";
 import styled from "styled-components";
+import { assignRelevantIcon } from "../constants/utils";
 
 const SurveyCard = props => (
   <>
@@ -9,7 +10,7 @@ const SurveyCard = props => (
         <div className="media">
           <div className="media-left">
             <span className="icon is-large">
-              <i className="fas fa-3x fa-home"></i>
+              {assignRelevantIcon(props.name)}
             </span>
           </div>
           <div className="media-content">
@@ -25,8 +26,8 @@ const SurveyCard = props => (
 export default SurveyCard;
 
 const Card = posed.div({
-  open: { y: 0, opacity: 1 },
-  closed: { y: 20, opacity: 0 }
+  enter: { y: 0, opacity: 1 },
+  exit: { y: 50, opacity: 0 }
 });
 
 const StyledCard = styled(Card)`

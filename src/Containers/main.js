@@ -1,53 +1,57 @@
 import React, { useState, useEffect } from "react";
 import SurveyCard from "../Components/surveyCard";
 import posed from "react-pose";
-
+import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 const Main = () => {
-  let history = useHistory();
-  const [loaded, changeLoaded] = useState(false);
+  const [data, setData] = useState({ surveys: [] });
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
+  const url = "https://my-json-server.typicode.com/focaldata/demo/db";
+
   useEffect(() => {
-    changeLoaded(!loaded);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const fetchData = async () => {
+      setIsError(false);
+      try {
+        const result = await axios(url);
+        setData(result.data);
+      } catch (error) {
+        setIsError(true);
+      }
+      setIsLoading(false);
+    };
+    fetchData();
   }, []);
+
+  let history = useHistory();
 
   const onSurveyClick = id => {
     history.push(`/survey/${id}`);
   };
+  const surveyList = data.surveys.map(survey => (
+    <SurveyCard
+      key={survey.surveyId}
+      name={survey.title}
+      questions={survey.questions.length}
+      onClick={() => onSurveyClick(survey.title)}
+    />
+  ));
 
   return (
-    <div>
+    <>
       <h2 className="title is-3"> Existing Surveys:</h2>
-
-      <Wrapper pose={loaded ? "open" : "closed"}>
-        <SurveyCard
-          name="Brexit"
-          questions="3"
-          onClick={() => onSurveyClick("Brexit")}
-        />
-        <SurveyCard
-          name="Ennvironment"
-          questions="5"
-          onClick={() => onSurveyClick("Ennvironment")}
-        />
-        <SurveyCard
-          name="US"
-          questions="2"
-          onClick={() => onSurveyClick("US Elections")}
-        />
+      <Wrapper>
+        {isError && <div>Problem with fetching data</div>}
+        {isLoading ? <div>Loading ...</div> : surveyList}
       </Wrapper>
-    </div>
+    </>
   );
 };
 
 const Wrapper = posed.div({
-  open: {
-    opacity: "100%",
-    delayChildren: 100,
-    staggerChildren: 90
-  },
-  closed: { opacity: "0%", delay: 300 }
+  enter: { staggerChildren: 50 },
+  exit: { staggerChildren: 20, staggerDirection: -1 }
 });
 
 export default Main;
