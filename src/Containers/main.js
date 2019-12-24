@@ -26,15 +26,20 @@ const Main = () => {
 
   let history = useHistory();
 
-  const onSurveyClick = id => {
-    history.push(`/survey/${id}`);
+  const onSurveyClick = (title, surveyId) => {
+    console.log(data);
+
+    history.push({
+      pathname: `/survey/${title}`,
+      state: data.surveys[surveyId - 1]
+    });
   };
   const surveyList = data.surveys.map(survey => (
     <SurveyCard
       key={survey.surveyId}
       name={survey.title}
       questions={survey.questions.length}
-      onClick={() => onSurveyClick(survey.title)}
+      onClick={() => onSurveyClick(survey.title, survey.surveyId)}
     />
   ));
 

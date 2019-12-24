@@ -5,7 +5,7 @@ import styled from "styled-components";
 const ChartCard = props => (
   <>
     <StyledCard className="card" onClick={props.onClick}>
-      <div className="card-content">CHART HERE</div>
+      <div className="card-content">{props.children}</div>
     </StyledCard>
   </>
 );
@@ -17,6 +17,4 @@ const Card = posed.div({
   exit: { y: 50, opacity: 0 }
 });
 
-const StyledCard = styled(Card)`
-  height: 250px;
-`;
+const StyledCard = styled(Card)``;
