@@ -18,3 +18,18 @@ export function assignRelevantIcon(title) {
       break;
   }
 }
+
+export function splitLongString(string) {
+  return clipExcessText(string, 60).split("*");
+}
+
+function clipExcessText(text, limit) {
+  let divider = "*";
+  if (text.length <= limit) return text;
+
+  let validText = text.slice(0, limit);
+  let position = validText.lastIndexOf(" ");
+  let excessText = text.slice(position);
+
+  return [validText.slice(0, position), divider, excessText].join("");
+}

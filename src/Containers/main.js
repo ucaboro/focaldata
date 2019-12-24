@@ -27,8 +27,6 @@ const Main = () => {
   let history = useHistory();
 
   const onSurveyClick = (title, surveyId) => {
-    console.log(data);
-
     history.push({
       pathname: `/survey/${title}`,
       state: data.surveys[surveyId - 1]

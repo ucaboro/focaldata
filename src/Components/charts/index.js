@@ -24,7 +24,7 @@ const ChartWrapper = props => {
           <RadarChart
             data={props.data.answerOptions}
             title={props.data.questionTitle}
-            color="#70CAD1"
+            color="rgba(255, 110, 90, 0.4)"
           />
         </ChartCard>
       );

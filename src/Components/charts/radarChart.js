@@ -1,18 +1,20 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useRef, useEffect } from "react";
 import Chart from "chart.js";
+import { splitLongString } from "../../constants/utils";
 
 const RadarChart = props => {
   const canvasRef = useRef(null);
+  const { data, color, title } = props;
   useEffect(() => {
     new Chart(canvasRef.current, {
       type: "radar",
       data: {
-        labels: props.data.map(d => d.text),
+        labels: data.map(d => d.text),
         datasets: [
           {
-            data: props.data.map(d => d.selectedByRespondents),
-            backgroundColor: "rgba(255, 110, 90, 0.4)",
+            data: data.map(d => d.selectedByRespondents),
+            backgroundColor: color,
             fill: true
           }
         ]
@@ -21,8 +23,9 @@ const RadarChart = props => {
         responsive: true,
         title: {
           display: true,
-          text: props.title,
-          fontSize: 16
+          text: splitLongString(title),
+          fontSize: 16,
+          padding: 15
         },
         animation: {
           animateScale: false,
