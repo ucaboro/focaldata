@@ -16,10 +16,10 @@ exports[`Snapshots Components chartCard renders 1`] = `
 
 exports[`Snapshots Components navbar renders 1`] = `
 <nav
-  className="sc-bwzfXH gbjnra navbar is-transparent"
+  className="sc-bdVaJa howOjw navbar is-transparent"
 >
   <div
-    className="sc-htpNat hBjRQC navbar-brand"
+    className="sc-bwzfXH kZUMPF navbar-brand"
   >
     <div
       className="navbar-item"
@@ -27,7 +27,7 @@ exports[`Snapshots Components navbar renders 1`] = `
     >
       <img
         alt="focaldata_logo"
-        className="sc-bxivhb jVkVnH"
+        className="sc-htpNat csvrOU"
         src="logo.png"
       />
     </div>
@@ -47,19 +47,19 @@ exports[`Snapshots Components navbar renders 1`] = `
     </div>
   </div>
   <div
-    className="sc-EHOje evioSs navbar-menu "
+    className="sc-ifAKCX dgaxwR navbar-menu "
   >
     <div
       className="navbar-end"
     >
       <a
-        className="sc-ifAKCX dXJwZw navbar-item"
+        className="sc-bxivhb cTLLAg navbar-item"
         onClick={[Function]}
       >
         Home
       </a>
       <a
-        className="sc-ifAKCX dXJwZw navbar-item"
+        className="sc-bxivhb cTLLAg navbar-item"
         href="https://www.focaldata.com/company/about-us"
       >
         About
@@ -71,7 +71,7 @@ exports[`Snapshots Components navbar renders 1`] = `
 
 exports[`Snapshots Components surveyCard renders 1`] = `
 <div
-  className="sc-bdVaJa evmvjk card"
+  className="sc-EHOje itwaHH card"
 >
   <div
     className="card-content"

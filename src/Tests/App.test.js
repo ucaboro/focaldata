@@ -1,6 +1,5 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import App from "../App";
 import Navbar from "../Components/navbar";
 import SurveyCard from "../Components/surveyCard";
 import PieChart from "../Components/charts/pieChart";
