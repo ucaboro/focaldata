@@ -33,7 +33,7 @@ const Main = () => {
     });
   };
   const surveyList = data.surveys.map(survey => (
-    <SurveyCard
+    <Card
       key={survey.surveyId}
       name={survey.title}
       questions={survey.questions.length}
@@ -55,6 +55,11 @@ const Main = () => {
 const Wrapper = posed.div({
   enter: { staggerChildren: 50 },
   exit: { staggerChildren: 20, staggerDirection: -1 }
+});
+
+const Card = posed(SurveyCard)({
+  enter: { y: 0, opacity: 1 },
+  exit: { y: 50, opacity: 0 }
 });
 
 export default Main;

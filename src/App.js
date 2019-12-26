@@ -16,8 +16,9 @@ const App = () => (
           <PoseGroup>
             <RouteContainer key={location.pathname}>
               <Switch location={location}>
-                <Route exact path={ROUTES.MAIN} component={Main} key="main" />
-                <Route path={ROUTES.SURVEY} component={Survey} key="main" />
+                <Route exact path={ROUTES.MAIN} component={Main} />
+                <Route path={ROUTES.SURVEY} component={Survey} />
+                <Route path="*" component={() => <>Page doesn't exist</>} />
               </Switch>
             </RouteContainer>
           </PoseGroup>

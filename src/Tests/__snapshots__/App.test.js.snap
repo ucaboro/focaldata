@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshots Components Charts PieChart renders 1`] = `ShallowWrapper {}`;
+
+exports[`Snapshots Components Charts RadarChart renders 1`] = `ShallowWrapper {}`;
+
+exports[`Snapshots Components chartCard renders 1`] = `
+<div
+  className="card"
+>
+  <div
+    className="card-content"
+  />
+</div>
+`;
+
+exports[`Snapshots Components navbar renders 1`] = `
+<nav
+  className="sc-bwzfXH gbjnra navbar is-transparent"
+>
+  <div
+    className="sc-htpNat hBjRQC navbar-brand"
+  >
+    <div
+      className="navbar-item"
+      onClick={[Function]}
+    >
+      <img
+        alt="focaldata_logo"
+        className="sc-bxivhb jVkVnH"
+        src="logo.png"
+      />
+    </div>
+    <div
+      className="navbar-burger burger "
+      onClick={[Function]}
+    >
+      <span
+        aria-hidden="true"
+      />
+      <span
+        aria-hidden="true"
+      />
+      <span
+        aria-hidden="true"
+      />
+    </div>
+  </div>
+  <div
+    className="sc-EHOje evioSs navbar-menu "
+  >
+    <div
+      className="navbar-end"
+    >
+      <a
+        className="sc-ifAKCX dXJwZw navbar-item"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+      <a
+        className="sc-ifAKCX dXJwZw navbar-item"
+        href="https://www.focaldata.com/company/about-us"
+      >
+        About
+      </a>
+    </div>
+  </div>
+</nav>
+`;
+
+exports[`Snapshots Components surveyCard renders 1`] = `
+<div
+  className="sc-bdVaJa evmvjk card"
+>
+  <div
+    className="card-content"
+  >
+    <div
+      className="media"
+    >
+      <div
+        className="media-left"
+      >
+        <span
+          className="icon is-large"
+        >
+          <i
+            className="fa fa-3x fa-question"
+          />
+        </span>
+      </div>
+      <div
+        className="media-content"
+      >
+        <p
+          className="title is-4"
+        >
+          title
+        </p>
+        <p
+          className="subtitle is-6"
+        >
+          Questions: 
+          4
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Snapshots Containers Main page renders with children 1`] = `ReactWrapper {}`;
+
+exports[`Snapshots Containers Survey page renders with children 1`] = `ReactWrapper {}`;

@@ -4,8 +4,9 @@ import Chart from "chart.js";
 import { splitLongString } from "../../constants/utils";
 
 const PieChart = props => {
-  const canvasRef = useRef(null);
   const { data, colors, title } = props;
+  const canvasRef = useRef(null);
+
   useEffect(() => {
     new Chart(canvasRef.current, {
       type: "pie",
@@ -27,8 +28,7 @@ const PieChart = props => {
           padding: 15
         },
         animation: {
-          animateScale: false,
-          animateRotate: false
+          duration: 0
         },
         legend: {
           position: "right",

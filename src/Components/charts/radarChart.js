@@ -28,8 +28,7 @@ const RadarChart = props => {
           padding: 15
         },
         animation: {
-          animateScale: false,
-          animateRotate: false
+          duration: 0
         },
         legend: {
           display: false,
